@@ -1,4 +1,9 @@
-class contacto: 
+class Contacto: 
+  nombre = ""
+  telefono = ""
+  direccion = ""
+  relacion = ""
+
   def __init__(self, nombre, telefono, direccion, relacion):
     self.nombre = nombre
     self.telefono = telefono
