@@ -12,9 +12,16 @@ class Contacto:
         self._direccion = direccion
         self._relacion = relacion
 
+
+    def __repr__(self) -> str:
+        return self.__str__()
+
     def __str__(self) -> str:
-        return (f"Nombre: {self._nombre}, Telefono: {self._telefono}, "
-                f"Direccion: {self._direccion}, Relacion: {self._relacion}")
+        return (f"\n\nNuevo contacto:\nNombre: {self._nombre}, \nTelefono: {self._telefono}, "
+                f"\nDireccion: {self._direccion}, \nRelacion: {self._relacion}")
+    @staticmethod
+    def parsear(dic):
+        return Contacto(dic["nombre"], dic["telefono"], dic["direccion"], dic["relacion"])
 
     @property
     def nombre(self) -> str:
@@ -47,4 +54,5 @@ class Contacto:
     @relacion.setter
     def relacion(self, value: str) -> None:
         self._relacion = value
+
 
