@@ -1,38 +1,50 @@
-#Consideraciones de POO en Python: 
-# __init__ es el constructor de la clase, es el primer metodo que se ejecuta al crear un objeto de la clase
-# self es una referencia al objeto que se esta creando
-# __str__ es un metodo que se ejecuta cuando se quiere imprimir el objeto
-class Contacto: 
+# Consideraciones de la sintaxis:
+# __str__ -> Metodo que se ejecuta cuando se imprime el objeto
+# @property -> Decorador que permite acceder a los atributos privados de la clase
+# @atributo.setter -> Decorador que permite modificar los atributos privados de la clase
+# -> Indica el tipo de retorno de la funcion
+# : -> Indica el tipo de dato de un parametro
 
-  def __init__(self, nombre, telefono, direccion, relacion):
-    self.nombre = nombre
-    self.telefono = telefono
-    self.direccion = direccion
-    self.relacion = relacion
+class Contacto:
+    def __init__(self, nombre: str, telefono: str, direccion: str, relacion: str):
+        self._nombre = nombre
+        self._telefono = telefono
+        self._direccion = direccion
+        self._relacion = relacion
 
-  def __str__(self):
-    return f"Nombre: {self.nombre}, Telefono: {self.telefono}, Direccion: {self.direccion}, Relacion: {self.relacion}"
+    def __str__(self) -> str:
+        return (f"Nombre: {self._nombre}, Telefono: {self._telefono}, "
+                f"Direccion: {self._direccion}, Relacion: {self._relacion}")
 
-  def get_name(self):
-    return self.nombre
+    @property
+    def nombre(self) -> str:
+        return self._nombre
 
-  def get_phone(self):
-    return self.telefono
+    @nombre.setter
+    def nombre(self, value: str) -> None:
+        self._nombre = value
 
-  def get_adress(self):
-    return self.direccion
+    @property
+    def telefono(self) -> str:
+        return self._telefono
 
-  def get_relation(self):
-    return self.relacion
+    @telefono.setter
+    def telefono(self, value: str) -> None:
+        self._telefono = value
 
-  def set_name(self, name):
-    self.nombre = name
+    @property
+    def direccion(self) -> str:
+        return self._direccion
 
-  def set_phone(self, phone):
-    self.telefono = phone
+    @direccion.setter
+    def direccion(self, value: str) -> None:
+        self._direccion = value
 
-  def set_adress(self, adress):
-    self.direccion = adress
+    @property
+    def relacion(self) -> str:
+        return self._relacion
 
-  def set_relation(self, relation):
-    self.relacion = relation
+    @relacion.setter
+    def relacion(self, value: str) -> None:
+        self._relacion = value
+
