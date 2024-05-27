@@ -6,11 +6,27 @@ from agenda.agenda import Agenda
 
 class Principal:
 
-  @staticmethod
-  def main():
-    _agenda = Agenda("./data/data.json")
+  def __init__(self):
+    self._agenda = Agenda("./data/data.json")
 
+  def menu(self):
 
+    print("Welcome to address book! Enter 'finish' to finish the list\n")
+
+    print("""
+    ---------------------------------------------------------------------
+    |   1. search -> search by name                                     |
+    ---------------------------------------------------------------------
+    """)
+
+    while True:
+      option = input("\n$ ")
+
+      if option == "search":
+        search = input("Enter the name: ")
+        contact = self._agenda.getContact(search)
+        print(contact)
 
 if __name__ == "__main__":
-  Principal.main()
+    principal = Principal()
+    principal.menu()
