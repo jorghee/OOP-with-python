@@ -21,12 +21,6 @@ class Agenda:
       json.dump(contacts_pars, save, ensure_ascii=False, indent=2)
       print("Guardacion exitosa...\n")
 
-  def __repr__(self) -> str: 
-    return self.__str__()
-
-  def __str__(self) -> str:
-    return '\n'.join([str(contact) for contact in self._contacts])
-  
   def getContact(self, pattern):
     for contact in self._contacts:
         name = contact.nombre
@@ -34,6 +28,21 @@ class Agenda:
         if isName:
           return contact
     return "No encontrado\n"
+
+  def insertContact(self, newContact):
+    for saved in self._contacts:
+      if saved.nombre == newContact.nombre:
+        saved = newContact
+        print("El contacto se sobreescribió exitosamente...\n")
+
+    self._contacts.append(newContact)
+    print("El contacto se guardó exitosamente...\n")
+
+  def __repr__(self) -> str:
+    return self.__str__()
+
+  def __str__(self) -> str:
+    return '\n'.join([str(contact) for contact in self._contacts])
 
   # Algoritmo Knuth-Morris-Pratt (KMP)
   def _match(self, name, pattern):
