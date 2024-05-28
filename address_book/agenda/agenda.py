@@ -38,6 +38,10 @@ class Agenda:
     self._contacts.append(newContact)
     print("El contacto se guardó exitosamente...\n")
 
+  def listAgenda(self):
+    for contact in self._contacts:
+      print(contact)
+
   def __repr__(self) -> str:
     return self.__str__()
 
