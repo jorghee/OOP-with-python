@@ -11,21 +11,34 @@ class Principal:
 
   def menu(self):
 
-    print("Welcome to address book! Enter 'finish' to finish the list\n")
-
+    print("Welcome to address book!")
     print("""
     ---------------------------------------------------------------------
     |   1. search -> search by name                                     |
+    |   6. save -> save the contacts                                    |
+    |   7. exit -> exit the program                                     |
     ---------------------------------------------------------------------
     """)
 
     while True:
-      option = input("\n$ ")
+      option = input("agenda> ")
+      option = option.split()
 
-      if option == "search":
-        search = input("Enter the name: ")
-        contact = self._agenda.getContact(search)
-        print(contact)
+      if option[0] == "search":
+        if len(option) == 2:
+          contact = self._agenda.getContact(option[1])
+          print(contact)
+        else:
+          print("Ingrese: search <nombre>\n")
+      elif option[0] == "save":
+        if len(option) == 1:
+          self._agenda.guardar_agenda()
+        else:
+          print("Ingrese: save\n")
+      elif option[0] == "exit":
+        break
+      else:
+        print("Comando no encontrado\n")
 
 if __name__ == "__main__":
     principal = Principal()
