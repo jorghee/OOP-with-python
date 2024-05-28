@@ -17,11 +17,20 @@ class Contacto:
         return self.__str__()
 
     def __str__(self) -> str:
-        return (f"\n\nNuevo contacto:\nNombre: {self._nombre}, \nTelefono: {self._telefono}, "
-                f"\nDireccion: {self._direccion}, \nRelacion: {self._relacion}")
+        return (f"\nNombre:\t\t{self._nombre}\nTelefono:\t{self._telefono}\n"
+                f"Direccion:\t{self._direccion}\nRelacion:\t{self._relacion}\n")
+
     @staticmethod
-    def parsear(dic):
+    def parsear_de_json(dic):
         return Contacto(dic["nombre"], dic["telefono"], dic["direccion"], dic["relacion"])
+
+    def parsear_a_json(self):
+      return {
+        "nombre": self.nombre,
+        "telefono": self.telefono,
+        "direccion": self.direccion,
+        "relacion": self.relacion
+      }
 
     @property
     def nombre(self) -> str:
