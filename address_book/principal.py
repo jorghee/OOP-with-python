@@ -15,6 +15,7 @@ class Principal:
     print("""
     ---------------------------------------------------------------------
     |   1. search -> search by name                                     |
+    |   2. insert -> insert the new contact                             |
     |   6. save -> save the contacts                                    |
     |   7. exit -> exit the program                                     |
     ---------------------------------------------------------------------
@@ -30,6 +31,13 @@ class Principal:
           print(contact)
         else:
           print("Ingrese: search <nombre>\n")
+      elif option[0] == "insert":
+        # Recibe 4 argumentos, de lo contrario ocurre un comportamiento no esperado
+        if len(option) == 5:
+          newContact = Contacto(option[1], option[2], option[3], option[4])
+          self._agenda.insertContact(newContact)
+        else:
+          print("Ingrese: insert <nombre> <numero> <direccion> <relacion>\n")
       elif option[0] == "save":
         if len(option) == 1:
           self._agenda.guardar_agenda()
