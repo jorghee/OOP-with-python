@@ -16,6 +16,7 @@ class Principal:
     ---------------------------------------------------------------------
     |   1. search -> search by name                                     |
     |   2. insert -> insert the new contact                             |
+    |   5. list -> list the agenda's contacts                           |
     |   6. save -> save the contacts                                    |
     |   7. exit -> exit the program                                     |
     ---------------------------------------------------------------------
@@ -38,6 +39,11 @@ class Principal:
           self._agenda.insertContact(newContact)
         else:
           print("Ingrese: insert <nombre> <numero> <direccion> <relacion>\n")
+      elif option[0] == "list":
+        if len(option) == 1:
+          self._agenda.listAgenda()
+        else:
+          print("Ingrese: list\n")
       elif option[0] == "save":
         if len(option) == 1:
           self._agenda.guardar_agenda()
