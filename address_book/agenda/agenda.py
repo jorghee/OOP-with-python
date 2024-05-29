@@ -38,6 +38,26 @@ class Agenda:
     self._contacts.append(newContact)
     print("El contacto se guardó exitosamente...\n")
 
+  def  modificarContacto(self, pattern, newContact):
+    for contact in self._contacts:
+      name = contact.nombre
+      isName = self._match(name.lower(), pattern.lower())
+      if isName:
+        contact = newContact
+        print("El contacto se modificó exitosamente...\n")
+        return
+    print("No se encontró el contacto a modificar...\n")
+    
+  def borrarContacto(self, pattern):
+    for contact in self._contacts:
+      name = contact.nombre
+      isName = self._match(name.lower(), pattern.lower())
+      if isName:
+        self._contacts.remove(contact)
+        print("El contacto se eliminó exitosamente...\n")
+        return
+    print("No se encontró el contacto a eliminar...\n")
+
   def listAgenda(self):
     for contact in self._contacts:
       print(contact)
