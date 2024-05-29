@@ -22,6 +22,16 @@ class ShoppingCart:
     
     
 
-  def calculate_total():
-    pass
+  def calculate_total(self):
+    total = 0
+    for key in self._item:
+      total += self._stock.get_product(key).value * self._item[key]
+    return total
+
+  def __str__(self):
+    return f"Productos en el carrito: {self._item}\nTotal: {self.calculate_total()}\n"
+    
+    
+
+  
 
