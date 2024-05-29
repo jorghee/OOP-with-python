@@ -30,9 +30,9 @@ class Agenda:
     return "No encontrado\n"
 
   def insertContact(self, newContact):
-    for saved in self._contacts:
+    for idx, saved in enumerate(self._contacts):
       if saved.nombre == newContact.nombre:
-        saved = newContact
+        self._contacts[idx] = newContact
         print("El contacto se sobreescribió exitosamente...\n")
         return
 
