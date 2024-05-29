@@ -14,8 +14,13 @@ class ShoppingCart:
     else:
       print("Producto no disponible...\n")
     
-  def finalize_purchase():
-    pass
+  def finalize_purchase(self):
+    for key in self._item:
+      self._stock.delete_products(key, self._item[key])
+    self._item = {}
+    print("Compra finalizada...\n")
+    
+    
 
   def calculate_total():
     pass
