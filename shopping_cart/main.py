@@ -12,7 +12,6 @@ class Main:
     stock.add_product(ProductStock("mouse", 50, 50))
 
     cart = ShoppingCart(stock)
-
     cart.add_item("monitor", 2)
     cart.add_item("telefono", 5)
     cart.add_item("teclado", 2)
@@ -21,7 +20,5 @@ class Main:
     print(cart)
 
     cart.finalize_purchase()
-
-      
   
 Main.main()

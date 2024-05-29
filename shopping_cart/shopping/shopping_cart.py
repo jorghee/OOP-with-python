@@ -19,8 +19,6 @@ class ShoppingCart:
       self._stock.delete_products(key, self._item[key])
     self._item = {}
     print("Compra finalizada...\n")
-    
-    
 
   def calculate_total(self):
     total = 0
@@ -30,8 +28,3 @@ class ShoppingCart:
 
   def __str__(self):
     return f"Productos en el carrito: {self._item}\nTotal: {self.calculate_total()}\n"
-    
-    
-
-  
-
