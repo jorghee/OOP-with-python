@@ -1,11 +1,13 @@
 from agenda.contacto import Contacto
 from agenda.agenda import Agenda
 
-#Consideraciones sobre la implementacion: 
-# __name__ es una variable que se crea en todos los modulos de Python, el valor de esta variable es "__main__" si el modulo se esta ejecutando como un programa principal con "python nombre_modulo.py" o el nombre del modulo si se esta importando
+""" Consideraciones sobre la implementacion:
+  __name__ > Es una variable que se crea en todos los modulos de Python, su valor es
+        '__main__' si el módulo se está ejecutando como un programa principal con
+        'python nombre_modulo.py' o el nombre del modulo si se esta importando.
+"""
 
 class Principal:
-
   def __init__(self):
     self._agenda = Agenda("./data/data.json")
 
@@ -66,7 +68,6 @@ class Principal:
         break
       else:
         print("Comando no encontrado\n")
-
 
 if __name__ == "__main__":
     principal = Principal()
