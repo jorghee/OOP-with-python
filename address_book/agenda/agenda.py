@@ -34,6 +34,7 @@ class Agenda:
       if saved.nombre == newContact.nombre:
         saved = newContact
         print("El contacto se sobreescribió exitosamente...\n")
+        return
 
     self._contacts.append(newContact)
     print("El contacto se guardó exitosamente...\n")
