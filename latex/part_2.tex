@@ -1,7 +1,7 @@
 \subsection{Método \texttt{updateContact}}
 \subsubsection{Definición del Método}
-\begin{minted}
-\begin{minted}[language=python]
+
+\begin{minted}[bgcolor=background]{python}
 def updateContact(self, newContact):
     for idx, saved in enumerate(self._contacts):
         if saved.nombre == newContact.nombre:
@@ -9,7 +9,6 @@ def updateContact(self, newContact):
             print("El contacto se actualizó exitosamente...\n")
             return
     print("No se encontró el contacto a actualizar...\n")
-\end{minted}
 \end{minted}
 
 \subsubsection{Descripción del Funcionamiento}
@@ -30,8 +29,8 @@ def updateContact(self, newContact):
 
 \subsection{Método \texttt{deleteContact}}
 \subsubsection{Definición del Método}
-\begin{minted}
-\begin{minted}[language=python]
+
+\begin{minted}[bgcolor=background]{python}
 def deleteContact(self, pattern):
     for contact in self._contacts:
         name = contact.nombre
@@ -41,7 +40,6 @@ def deleteContact(self, pattern):
             print("El contacto se eliminó exitosamente...\n")
             return
     print("No se encontró el contacto a eliminar...\n")
-\end{minted}
 \end{minted}
 
 \subsubsection{Descripción del Funcionamiento}
