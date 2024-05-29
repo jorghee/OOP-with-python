@@ -12,7 +12,7 @@ class StockProducts:
     return self._products.get(name)
 
   def delete_products(self, name, cuantity):
-    if self._products.get(name) and self._products[name].cuantity >= cuantity:
+    if self._products[name].cuantity >= cuantity:
       self._products[name].cuantity -= cuantity 
       print("Producto eliminado exitosamente...")
     else:
